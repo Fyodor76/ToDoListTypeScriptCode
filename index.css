@@ -33,6 +33,7 @@ body {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .info {
@@ -53,62 +54,6 @@ body {
   cursor: pointer;
 }
 
-.sidebar {
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-}
-
-.calculator-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2vw;
-}
-
-.number {
-  border: .5px solid #9b9a9a;
-  padding: .5em .8em;
-  background: gold;
-}
-
-.calculator-btns {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  color: #000;
-  text-align: center;
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.btns {
-  display: flex;
-  flex-direction: column;
-  border-left: .5px solid #9b9a9a;
-  padding-left: 10px;
-  margin-left: 15px;
-}
-
-.btn {
-  border: .5px solid #9b9a9a;
-  padding: .4em .8em;
-  background: rgb(2, 2, 36);
-  color: #fff;
-  margin-bottom: 10px;
-  margin-right: 15px;
-}
-
-.subtn {
-  display: flex;
-}
-
-.btn:hover, .number:hover {
-  background-color: rgb(171, 147, 10);
-}
 
 #checked {
   text-decoration: line-through;

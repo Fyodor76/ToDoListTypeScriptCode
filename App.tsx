@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Calculator from "./components/Calculator";
+
 
 import ToDo from "./components/ToDo";
 import ITodo from './todo/types/types';
@@ -14,12 +14,11 @@ function App() {
     fetchTodos()
   }, [])
 
+      /* Запрос на сервер для получения готового списка todo  */
   async function fetchTodos() {
     try {
       const response = await axios.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos?_limit=5')
-      console.log(response)
       setTodos(response.data)
-      console.log(todos, typeof todos)
     }
     catch (error) {
       console.log(error)
@@ -27,7 +26,6 @@ function App() {
   }
 
   const changeTodo = (id: number) => {
-    //copy почему???
     const copy = [...todos];
     const checkedTodo = copy.find(todo => todo.id === id);
     if (checkedTodo !== undefined) {
@@ -59,10 +57,8 @@ function App() {
   }
 
   const onEnterPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    ///так предложили на стаковерфлоу
     const key = event.keyCode || event.key;
     if (key === 13) {
-        //без as не получалось, взяла со стаковерфлоу
         const value = (event.target as HTMLInputElement).value;
         const copy = [...todos];
         copy.unshift({
@@ -79,7 +75,6 @@ function App() {
   return (
     <div className="App">
       <ToDo todos={todos} changeTodo={changeTodo} removeTodo={removeTodo} onEnterPress={onEnterPress}/>
-      <Calculator />
     </div>
   );
 }
